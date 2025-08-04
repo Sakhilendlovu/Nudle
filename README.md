@@ -66,7 +66,7 @@ Complete shadcn/ui component library for consistent design
 ## Contact Information
 For questions about this project:
 - Course Info: info@nudle.org
-- Phone: (555) 123-4567
+- Phone: (076) 823 1004
 
 ---
 Created for Nudle's mission to transform communities through digital literacy education.
