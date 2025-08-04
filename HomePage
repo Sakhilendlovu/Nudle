@@ -1,0 +1,242 @@
+ import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
+import { ImageWithFallback } from './figma/ImageWithFallback';
+import { 
+  Computer, 
+  Mail, 
+  FileText, 
+  Brain, 
+  Users, 
+  Trophy,
+  ArrowRight,
+  CheckCircle
+} from 'lucide-react';
+
+export default function HomePage() {
+  const highlights = [
+    {
+      icon: <Computer className="w-8 h-8 text-blue-600" />,
+      title: 'Computer Basics',
+      description: 'Learn essential computer skills from the ground up'
+    },
+    {
+      icon: <Mail className="w-8 h-8 text-green-600" />,
+      title: 'Email & Internet',
+      description: 'Master communication and online navigation'
+    },
+    {
+      icon: <FileText className="w-8 h-8 text-purple-600" />,
+      title: 'Microsoft Office',
+      description: 'Get job-ready with Word, Excel, and PowerPoint'
+    },
+    {
+      icon: <Brain className="w-8 h-8 text-orange-600" />,
+      title: 'AI Tools',
+      description: 'Discover how AI can help in work and daily life'
+    }
+  ];
+
+  const benefits = [
+    'No prior computer experience needed',
+    'Learn at your own pace',
+    'Real-world practical skills',
+    'Job placement support',
+    'Certificate upon completion'
+  ];
+
+  return (
+    <div className="min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-50 to-purple-50 py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
+                  Master Essential Computer Skills
+                </h1>
+                <p className="text-xl text-gray-700 font-medium">
+                  "Your Gateway to Digital Confidence"
+                </p>
+                <p className="text-lg text-gray-600 leading-relaxed">
+                  Join thousands who have transformed their lives through our comprehensive 
+                  Basic End User Computing Course. Designed specifically for beginners, 
+                  unemployed youth, and anyone ready to build digital confidence.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" className="text-lg px-8 py-4">
+                  Register Now - It's Free
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+                <Link to="/course-overview">
+                  <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            
+            <div className="relative">
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Diverse group of people learning computer skills together"
+                className="w-full h-96 object-cover rounded-xl shadow-lg"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-lg">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-blue-600">5,000+</div>
+                  <div className="text-sm text-gray-600">Lives Changed</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Course Highlights */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+              What You'll Learn
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our course covers everything you need to feel confident using computers 
+              in today's digital world.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {highlights.map((item, index) => (
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-0 space-y-4">
+                  <div className="flex justify-center">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600">
+                    {item.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Nudle */}
+      <section className="bg-gray-50 py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                alt="Instructor helping a student with computer skills"
+                className="w-full h-96 object-cover rounded-xl shadow-lg"
+              />
+            </div>
+            
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                  Why Choose Nudle?
+                </h2>
+                <p className="text-lg text-gray-600">
+                  We understand that starting your digital journey can feel overwhelming. 
+                  That's why we've designed a program that meets you exactly where you are.
+                </p>
+              </div>
+              
+              <div className="space-y-4">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <CheckCircle className="w-6 h-6 text-green-600 flex-shrink-0" />
+                    <span className="text-lg text-gray-700">{benefit}</span>
+                  </div>
+                ))}
+              </div>
+              
+              <Button size="lg" className="text-lg px-8 py-4">
+                Start Your Journey Today
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stats */}
+      <section className="bg-primary py-16 lg:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+              Real Results, Real Impact
+            </h2>
+            <p className="text-xl text-primary-foreground/90">
+              Join thousands who have already transformed their futures
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="space-y-2">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground">
+                92%
+              </div>
+              <div className="text-xl text-primary-foreground/90">
+                Course Completion Rate
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground">
+                78%
+              </div>
+              <div className="text-xl text-primary-foreground/90">
+                Found Employment Within 6 Months
+              </div>
+            </div>
+            <div className="space-y-2">
+              <div className="text-4xl lg:text-5xl font-bold text-primary-foreground">
+                5,000+
+              </div>
+              <div className="text-xl text-primary-foreground/90">
+                Lives Transformed
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-16 lg:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="space-y-8">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900">
+              Ready to Build Your Digital Future?
+            </h2>
+            <p className="text-xl text-gray-600">
+              Don't let technology hold you back. Start building the skills 
+              you need for today's job market.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="text-lg px-8 py-4">
+                Register for Free Course
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+              <Link to="/course-overview">
+                <Button variant="outline" size="lg" className="text-lg px-8 py-4">
+                  View Course Details
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
